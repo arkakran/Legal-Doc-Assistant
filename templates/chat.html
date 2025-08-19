@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Assistant</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-balance-scale"></i>
+                    <h1>Legal Document Assistant</h1>
+                </div>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div id="chat-box" class="chat-box">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h2>Welcome to Legal Document Assistant</h2>
+                    <p>Ask me anything about Indian legal documents. I can help you with questions about Consumer Protection Act, Income Tax Act, Indian Penal Code, Motor Vehicle Act, and more.</p>
+                    <div class="suggestion-chips">
+                        <div class="chip" onclick="askSuggestion('What are the consumer rights under Consumer Protection Act?')">
+                            <i class="fas fa-user-shield"></i>
+                            Consumer Rights
+                        </div>
+                        <div class="chip" onclick="askSuggestion('Explain sections of Indian Penal Code')">
+                            <i class="fas fa-book-open"></i>
+                            IPC Sections
+                        </div>
+                        <div class="chip" onclick="askSuggestion('Motor vehicle penalties and fines')">
+                            <i class="fas fa-car"></i>
+                            Vehicle Laws
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="input-box">
+                        <textarea 
+                            id="question" 
+                            placeholder="Ask your legal question here..." 
+                            rows="1"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="input-actions">
+                            <span class="char-counter">0/500</span>
+                            <button id="send" class="send-button" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
